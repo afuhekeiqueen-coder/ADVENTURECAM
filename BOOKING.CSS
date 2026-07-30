@@ -259,6 +259,8 @@ textarea{
     resize:vertical;
 
     min-height:120px;
+    border:1.8px solid #cccccc;
+    background:#fafafa;
 
 
 .character-counter{
@@ -286,6 +288,14 @@ textarea{
 }
 
 
+.button-placeholder{
+    margin-top:30px;
+    padding:20px;
+    border:1px dashed #bdbdbd;
+    border-radius:12px;
+    background:#fafafa;
+}
+
 .button-group{
 
     display:flex;
@@ -295,8 +305,6 @@ textarea{
     align-items:center;
 
     gap:20px;
-
-    margin-top:30px;
 
     flex-wrap:wrap;
 
@@ -319,7 +327,7 @@ textarea{
 
     padding:15px 35px;
 
-    border:none;
+    border:2px solid transparent;
 
     border-radius:40px;
 
@@ -329,42 +337,35 @@ textarea{
 
     font-weight:600;
 
-    transition:.35s ease;
+    transition:all .35s ease;
 
 }
 
 .book-btn{
-
-    background:#176b2d;
-
-    color:#ffffff;
-
+    background:#176b2d !important;
+    color:#ffffff !important;
+    border:2px solid #176b2d !important;
 }
 
 .book-btn:hover{
-
-    background:#0f5220;
-
+    background:#e5e5e5 !important;
+    color:#176b2d !important;
+    border-color:#176b2d !important;
     transform:translateY(-5px);
-
     box-shadow:0 10px 20px rgba(0,0,0,.20);
-
 }
 
 .reset-btn{
-
-    background:#d8d8d8;
-
-    color:#333;
-
+    background:#d8d8d8 !important;
+    color:#333 !important;
+    border:2px solid #d8d8d8 !important;
 }
 
 .reset-btn:hover{
-
-    background:#bbbbbb;
-
+    background:#176b2d !important;
+    color:#ffffff !important;
+    border-color:#176b2d !important;
     transform:translateY(-5px);
-
 }
 
 
@@ -433,6 +434,11 @@ textarea:hover{
 
     border-color:#176b2d;
 
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
 }
 
 

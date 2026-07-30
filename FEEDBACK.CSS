@@ -173,13 +173,16 @@ body {
 .star {
   font-size: 26px;
   line-height: 1;
-  color: var(--lime);
+  color: #c7c7c7;
   cursor: pointer;
   user-select: none;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
+.star:hover,
 .star.selected {
-  color: var(--lime);
+  color: #ffd700;
+  transform: scale(1.08);
 }
 
 

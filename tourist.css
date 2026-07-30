@@ -1,0 +1,887 @@
+/* ==========================================
+   GOOGLE FONT
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.7;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero{
+    height:70vh;
+    background:url(img/FSET0838.JPG);
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.overlay{
+    background:rgba(0,0,0,.55);
+    width:100%;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.overlay h1{
+    color:#fff;
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.overlay p{
+    color:#f1f1f1;
+    max-width:800px;
+    font-size:18px;
+}
+
+/* ==========================================
+   SEARCH SECTION
+========================================== */
+
+.search-section{
+    text-align:center;
+    padding:70px 8% 30px;
+}
+
+.search-section h2{
+    color:#0b7d43;
+    margin-bottom:20px;
+    font-size:35px;
+}
+
+#searchBox{
+    width:420px;
+    max-width:100%;
+    padding:15px 20px;
+    border-radius:40px;
+    border:2px solid #0b7d43;
+    outline:none;
+    font-size:16px;
+}
+
+#searchBox:focus{
+    box-shadow:0 0 12px rgba(11,125,67,.35);
+}
+
+/* ==========================================
+   TOURIST CARD CONTAINER
+========================================== */
+
+.tourist-container{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+    padding:20px 0 80px;
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.card{
+    background:#fff;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+}
+
+/* ==========================================
+   CARD IMAGE
+========================================== */
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.card:hover img{
+    transform:scale(1.08);
+}
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.card-content{
+    padding:22px;
+}
+
+.region{
+    display:inline-block;
+    background:#0b7d43;
+    color:#fff;
+    padding:6px 14px;
+    border-radius:25px;
+    font-size:13px;
+    margin-bottom:12px;
+}
+
+.card-content h3{
+    font-size:24px;
+    color:#222;
+    margin-bottom:12px;
+}
+
+.card-content p{
+    color:#555;
+    font-size:15px;
+    margin-bottom:20px;
+    text-align:justify;
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.btn{
+    display:inline-block;
+    background:#0b7d43;
+    color:#fff;
+    text-decoration:none;
+    padding:12px 26px;
+    border-radius:30px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#085d31;
+    transform:scale(1.05);
+}
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    background:#0b2d1d;
+    color:#ffffff;
+    padding:70px 8% 20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-bottom:40px;
+}
+
+.footer-box h3{
+    font-size:24px;
+    margin-bottom:20px;
+    color:#f7d774;
+}
+
+.footer-box p{
+    color:#dddddd;
+    line-height:1.8;
+    text-align:justify;
+}
+
+.footer-box ul{
+    list-style:none;
+}
+
+.footer-box ul li{
+    margin:12px 0;
+}
+
+.footer-box ul li a{
+    color:#ffffff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-box ul li a:hover{
+    color:#f7d774;
+    padding-left:8px;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff;
+    color:#0b7d43;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:18px;
+    transition:.4s;
+}
+
+.social-icons a:hover{
+    background:#f7d774;
+    color:#000;
+    transform:translateY(-6px) rotate(360deg);
+}
+
+footer hr{
+    border:none;
+    height:1px;
+    background:rgba(255,255,255,.25);
+    margin:20px 0;
+}
+
+.copyright{
+    text-align:center;
+    color:#dddddd;
+    font-size:15px;
+    letter-spacing:.5px;
+}
+
+/* ==========================================
+   CARD ANIMATION
+========================================== */
+
+.card{
+    animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   BUTTON EFFECT
+========================================== */
+
+.btn:active{
+    transform:scale(.95);
+}
+
+/* ==========================================
+   IMAGE EFFECT
+========================================== */
+
+.card{
+    position:relative;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:240px;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0),
+        rgba(0,0,0,.12)
+    );
+
+    opacity:0;
+    transition:.4s;
+
+}
+
+.card:hover::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================
+   SEARCH BOX HOVER
+========================================== */
+
+#searchBox:hover{
+
+    border-color:#f7d774;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0b7d43;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#085d31;
+
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    header{
+
+        padding:18px 5%;
+
+    }
+
+    .overlay h1{
+
+        font-size:42px;
+
+    }
+
+    .overlay p{
+
+        font-size:17px;
+
+    }
+
+    .tourist-container{
+
+        width:94%;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    header{
+
+        flex-direction:column;
+        gap:15px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+        justify-content:center;
+
+    }
+
+    nav ul li{
+
+        margin:8px 12px;
+
+    }
+
+    .hero{
+
+        height:60vh;
+        margin-top:130px;
+
+    }
+
+    .overlay h1{
+
+        font-size:34px;
+
+    }
+
+    .overlay p{
+
+        font-size:15px;
+
+    }
+
+    .search-section{
+
+        padding:50px 20px;
+
+    }
+
+    .search-section h2{
+
+        font-size:28px;
+
+    }
+
+    #searchBox{
+
+        width:100%;
+
+    }
+
+    .card img{
+
+        height:220px;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media(max-width:480px){
+
+    .overlay h1{
+
+        font-size:28px;
+
+    }
+
+    .overlay p{
+
+        font-size:14px;
+
+    }
+
+    .card-content{
+
+        padding:18px;
+
+    }
+
+    .card-content h3{
+
+        font-size:21px;
+
+    }
+
+    .btn{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+    .footer-container{
+
+        text-align:center;
+
+    }
+
+    .social-icons{
+
+        justify-content:center;
+
+    }
+
+}
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+    background:#0b2d1d;
+    color:#ffffff;
+    padding:70px 8% 20px;
+}
+
+.footer-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+    margin-bottom:40px;
+}
+
+.footer-box h3{
+    font-size:24px;
+    margin-bottom:20px;
+    color:#f7d774;
+}
+
+.footer-box p{
+    color:#dddddd;
+    line-height:1.8;
+    text-align:justify;
+}
+
+.footer-box ul{
+    list-style:none;
+}
+
+.footer-box ul li{
+    margin:12px 0;
+}
+
+.footer-box ul li a{
+    color:#ffffff;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-box ul li a:hover{
+    color:#f7d774;
+    padding-left:8px;
+}
+
+.social-icons{
+    display:flex;
+    gap:15px;
+    margin-top:15px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#ffffff;
+    color:#0b7d43;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:18px;
+    transition:.4s;
+}
+
+.social-icons a:hover{
+    background:#f7d774;
+    color:#000;
+    transform:translateY(-6px) rotate(360deg);
+}
+
+footer hr{
+    border:none;
+    height:1px;
+    background:rgba(255,255,255,.25);
+    margin:20px 0;
+}
+
+.copyright{
+    text-align:center;
+    color:#dddddd;
+    font-size:15px;
+    letter-spacing:.5px;
+}
+
+/* ==========================================
+   CARD ANIMATION
+========================================== */
+
+.card{
+    animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================
+   BUTTON EFFECT
+========================================== */
+
+.btn:active{
+    transform:scale(.95);
+}
+
+/* ==========================================
+   IMAGE EFFECT
+========================================== */
+
+.card{
+    position:relative;
+}
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:240px;
+
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,0),
+        rgba(0,0,0,.12)
+    );
+
+    opacity:0;
+    transition:.4s;
+
+}
+
+.card:hover::before{
+
+    opacity:1;
+
+}
+
+/* ==========================================
+   SEARCH BOX HOVER
+========================================== */
+
+#searchBox:hover{
+
+    border-color:#f7d774;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#0b7d43;
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#085d31;
+
+}
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+    header{
+
+        padding:18px 5%;
+
+    }
+
+    .overlay h1{
+
+        font-size:42px;
+
+    }
+
+    .overlay p{
+
+        font-size:17px;
+
+    }
+
+    .tourist-container{
+
+        width:94%;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+    header{
+
+        flex-direction:column;
+        gap:15px;
+
+    }
+
+    nav ul{
+
+        flex-wrap:wrap;
+        justify-content:center;
+
+    }
+
+    nav ul li{
+
+        margin:8px 12px;
+
+    }
+
+    .hero{
+
+        height:60vh;
+        margin-top:130px;
+
+    }
+
+    .overlay h1{
+
+        font-size:34px;
+
+    }
+
+    .overlay p{
+
+        font-size:15px;
+
+    }
+
+    .search-section{
+
+        padding:50px 20px;
+
+    }
+
+    .search-section h2{
+
+        font-size:28px;
+
+    }
+
+    #searchBox{
+
+        width:100%;
+
+    }
+
+    .card img{
+
+        height:220px;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media(max-width:480px){
+
+    .overlay h1{
+
+        font-size:28px;
+
+    }
+
+    .overlay p{
+
+        font-size:14px;
+
+    }
+
+    .card-content{
+
+        padding:18px;
+
+    }
+
+    .card-content h3{
+
+        font-size:21px;
+
+    }
+
+    .btn{
+
+        width:100%;
+        text-align:center;
+
+    }
+
+    .footer-container{
+
+        text-align:center;
+
+    }
+
+    .social-icons{
+
+        justify-content:center;
+
+    }
+
+}

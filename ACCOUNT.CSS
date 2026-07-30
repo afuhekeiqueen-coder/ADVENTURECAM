@@ -400,6 +400,32 @@ footer{
     transform:translateY(-6px);
 }
 
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+}
+
+.social-icons a{
+    width:45px;
+    height:45px;
+    background:#fff;
+    color:#176b2d;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    text-decoration:none;
+    transition:.4s;
+}
+
+.social-icons a:hover{
+    background:#f5c542;
+    color:#fff;
+    transform:translateY(-6px);
+}
+
 .footer-bottom{
     margin-top:25px;
     text-align:center;

@@ -1,0 +1,942 @@
+/* ==========================================
+   GOOGLE FONTS
+========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+
+/* ==========================================
+   CSS RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+    background:#f8f8f8;
+    color:#333;
+    line-height:1.7;
+
+}
+
+
+
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.hero{
+
+    height:70vh;
+
+    background:
+    linear-gradient(rgba(0,0,0,.55),
+    rgba(0,0,0,.55)),
+    url("img2/IMG_4036.JPG") no-repeat;
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px;
+
+}
+
+.hero-text{
+
+    max-width:900px;
+
+}
+
+.hero h1{
+
+    color:white;
+    font-size:55px;
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    color:#f2f2f2;
+    font-size:20px;
+
+}
+
+
+/* ==========================================
+   SEARCH SECTION
+========================================== */
+
+.search-section{
+
+    padding:60px 10%;
+    text-align:center;
+
+}
+
+.search-section h2{
+
+    color:#006400;
+    font-size:34px;
+    margin-bottom:25px;
+
+}
+
+#searchBox{
+
+    width:60%;
+    max-width:650px;
+
+    padding:18px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:40px;
+
+    box-shadow:0 10px 20px rgba(0,0,0,.10);
+
+    font-size:17px;
+
+}
+
+
+/* ==========================================
+   FOOD GRID
+========================================== */
+
+.food-container{
+
+    width:90%;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(330px,1fr));
+
+    gap:35px;
+
+    padding-bottom:80px;
+
+}
+
+
+/* ==========================================
+   FOOD CARD
+========================================== */
+
+.food-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+/* ==========================================
+   CARD IMAGE
+========================================== */
+
+.food-card img{
+
+    width:100%;
+
+    height:250px;
+
+    object-fit:cover;
+
+}
+
+
+/* ==========================================
+   CARD CONTENT
+========================================== */
+
+.food-info{
+
+    padding:25px;
+
+}
+
+.food-info h3{
+
+    color:#006400;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.food-info h4{
+
+    color:#c49b32;
+
+    margin-top:15px;
+
+    margin-bottom:8px;
+
+    font-size:17px;
+
+}
+
+.food-info p{
+
+    color:#555;
+
+    font-size:15px;
+
+}
+
+
+/* ==========================================
+   LEARN MORE BUTTON
+========================================== */
+
+.food-info a{
+
+    display:inline-block;
+
+    margin-top:22px;
+
+    text-decoration:none;
+
+    background:#006400;
+
+    color:white;
+
+    padding:12px 26px;
+
+    border-radius:30px;
+
+    transition:.4s;
+
+    font-weight:600;
+
+}
+
+.food-info a:hover{
+
+    background:#c49b32;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* ==========================================
+   NEWSLETTER SECTION
+========================================== */
+
+.newsletter{
+
+    background:#006400;
+
+    color:#fff;
+
+    text-align:center;
+
+    padding:80px 10%;
+
+}
+
+.newsletter h2{
+
+    font-size:38px;
+
+    margin-bottom:15px;
+
+}
+
+.newsletter p{
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+}
+
+.newsletter form{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.newsletter input{
+
+    width:380px;
+
+    max-width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+}
+
+.newsletter button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#c49b32;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.newsletter button:hover{
+
+    background:#b28620;
+
+}
+/* ==========================================
+   CARD HOVER EFFECTS
+========================================== */
+
+.food-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.food-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.food-card img{
+
+    transition:transform .6s ease;
+
+}
+
+.food-card:hover .food-info h3{
+
+    color:#c49b32;
+
+}
+
+.food-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex-grow:1;
+
+}
+
+.food-info a{
+
+    margin-top:auto;
+
+}
+
+
+/* ==========================================
+   NEWSLETTER ANIMATION
+========================================== */
+
+.newsletter{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.newsletter::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+
+    height:300px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    top:-120px;
+
+    left:-120px;
+
+}
+
+.newsletter::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    bottom:-90px;
+
+    right:-90px;
+
+}
+
+
+/* ==========================================
+   BACK TO TOP BUTTON
+========================================== */
+
+#topBtn{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#006400;
+
+    color:#fff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    display:none;
+
+    transition:.4s;
+
+    z-index:999;
+
+}
+
+#topBtn:hover{
+
+    background:#c49b32;
+
+    transform:translateY(-5px);
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    background:#222;
+
+    color:#fff;
+
+    padding:70px 10% 25px;
+
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:45px;
+
+}
+
+.footer-box h3{
+
+    color:#c49b32;
+
+    margin-bottom:20px;
+
+    font-size:24px;
+
+}
+
+.footer-box p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+}
+
+.footer-box a{
+
+    display:block;
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+    transition:.3s;
+
+}
+
+.footer-box a:hover{
+
+    color:#c49b32;
+
+    padding-left:8px;
+
+}
+
+
+/* ==========================================
+   SOCIAL ICONS
+========================================== */
+
+.social-icons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-top:15px;
+
+}
+
+.social-icons a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#333;
+
+    color:#fff;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.social-icons a:hover{
+
+    background:#c49b32;
+
+    transform:translateY(-6px);
+
+}
+
+footer hr{
+
+    margin:45px 0 25px;
+
+    border:none;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+}
+
+footer .copyright{
+
+    text-align:center;
+
+    color:#ccc;
+
+    font-size:15px;
+
+}
+
+
+/* ==========================================
+   FADE-IN ANIMATION
+========================================== */
+
+.food-card{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/* ==========================================
+   TABLET RESPONSIVE
+========================================== */
+
+@media(max-width:992px){
+
+header{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    padding:20px;
+
+}
+
+nav ul{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.hero{
+
+    height:60vh;
+
+}
+
+.hero h1{
+
+    font-size:42px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+#searchBox{
+
+    width:90%;
+
+}
+
+.food-container{
+
+    width:95%;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+}
+
+.newsletter form{
+
+    flex-direction:column;
+
+}
+
+.newsletter input{
+
+    width:100%;
+
+}
+
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media(max-width:768px){
+
+.logo h2{
+
+    font-size:26px;
+
+}
+
+nav ul{
+
+    gap:15px;
+
+}
+
+nav ul li a{
+
+    font-size:15px;
+
+}
+
+.hero{
+
+    height:55vh;
+
+    padding:20px;
+
+}
+
+.hero h1{
+
+    font-size:32px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.search-section{
+
+    padding:40px 5%;
+
+}
+
+.search-section h2{
+
+    font-size:28px;
+
+}
+
+.food-container{
+
+    width:95%;
+
+    gap:25px;
+
+}
+
+.food-card img{
+
+    height:220px;
+
+}
+
+.food-info{
+
+    padding:20px;
+
+}
+
+.food-info h3{
+
+    font-size:24px;
+
+}
+
+.newsletter{
+
+    padding:60px 5%;
+
+}
+
+.newsletter h2{
+
+    font-size:30px;
+
+}
+
+.newsletter p{
+
+    font-size:16px;
+
+}
+
+.footer-container{
+
+    text-align:center;
+
+}
+
+.social-icons{
+
+    justify-content:center;
+
+}
+
+#topBtn{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:18px;
+
+}
+
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+.hero h1{
+
+    font-size:27px;
+
+}
+
+.hero p{
+
+    font-size:15px;
+
+}
+
+.food-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.food-card img{
+
+    height:200px;
+
+}
+
+.food-info h3{
+
+    font-size:22px;
+
+}
+
+.food-info h4{
+
+    font-size:16px;
+
+}
+
+.food-info p{
+
+    font-size:14px;
+
+}
+
+.newsletter button{
+
+    width:100%;
+
+}
+
+.newsletter input{
+
+    width:100%;
+
+}
+
+}
+
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ececec;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#006400;
+
+    border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#c49b32;
+
+}

@@ -54,6 +54,26 @@ nav ul li a:hover{
     color:#1f8f36;
 }
 
+nav ul li a.active{
+    color:#1f8f36;
+}
+
+nav ul li a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+    width:0;
+    height:3px;
+    background:#1f8f36;
+    transition:.3s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after{
+    width:100%;
+}
+
 
 .hero{
     width: 1px;
