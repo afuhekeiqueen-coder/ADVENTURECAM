@@ -9,6 +9,28 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <link rel="stylesheet" href="footer.css">
+    <style>
+        .book-btn {
+            background: #176b2d !important;
+            color: #ffffff !important;
+            border: 2px solid #176b2d !important;
+        }
+        .book-btn:hover {
+            background: #e5e5e5 !important;
+            color: #176b2d !important;
+            border-color: #176b2d !important;
+        }
+        .reset-btn {
+            background: #d8d8d8 !important;
+            color: #333333 !important;
+            border: 2px solid #d8d8d8 !important;
+        }
+        .reset-btn:hover {
+            background: #176b2d !important;
+            color: #ffffff !important;
+            border-color: #176b2d !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -182,50 +204,28 @@
                     required>
 
             </div>
-
-            <div class="form-group">
-
-                <label for="request">
-
-                    Special Request:
-
-                </label>
-
-                <textarea
-                    id="request"
-                    name="request"
-                    rows="5"
-                    maxlength="300"
-                    placeholder="Any Special Request"></textarea>
-
-            </div>
-
-            <!-- Character Counter -->
-
-            <div class="character-counter">
-
-                <span id="charCount">0</span>/300 Characters
-
-            </div>
                         
+            <div class="style="margin-top:30px; padding:20px; border:1px dashed #bdbdbd; border-radius:12px; background:#fafafa;">
 
-            <div class="button-group">
+                <div class="button-group">
 
-                <button type="submit" class="book-btn">
+                    <button type="submit" class="book-btn" style="background:#176b2d !important; color:#ffffff !important; border:2px solid #176b2d !important; box-shadow:none; padding:15px 35px; border-radius:40px; font-weight:600;">
 
-                    <i class="fa-solid fa-calendar-check"></i>
+                        <i class="fa-solid fa-calendar-check"></i>
 
-                    BOOK NOW
+                        BOOK NOW
 
-                </button>
+                    </button>
 
-                <button type="reset" class="reset-btn">
+                    <button type="reset" class="reset-btn" style="background:#d8d8d8 !important; color:#333333 !important; border:2px solid #d8d8d8 !important; box-shadow:none; padding:15px 35px; border-radius:40px; font-weight:600;">
 
-                    <i class="fa-solid fa-rotate-left"></i>
+                        <i class="fa-solid fa-rotate-left"></i>
 
-                    RESET
+                        RESET
 
-                </button>
+                    </button>
+
+                </div>
 
             </div>
 
