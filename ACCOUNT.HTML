@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create an Account — AdventureCam</title>
+<link rel="stylesheet" href="ACCOUNT.CSS">
+<link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="HOME.HTML">
+      <img src="img/DVDU4213[1].PNG" alt="AdventureCam Logo">
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="HOME.HTML">HOME</a></li>
+      <li><a href="ABOUT.HTML">ABOUT</a></li>
+      <li><a href="EXPLORE.HTML">EXPLORE CAMEROON</a></li>
+      <li><a href="MAPS.HTML">MAPS</a></li>
+      <li><a class="active" href="ACCOUNT.HTML">ACCOUNT</a></li>
+      <li><a href="BOOKING.HTML">BOOKING</a></li>
+      <li><a href="FEEDBACK.HTML">FEEDBACK</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="account-container">
+  <div class="card">
+    <div class="icon">
+      <svg viewBox="0 0 24 24"><path d="M4 17V7a1 1 0 0 1 1-1h9v11" stroke-linecap="round" stroke-linejoin="round"/><rect x="14" y="10" width="6" height="7" rx="1"/><circle cx="7.5" cy="18" r="1.6"/><circle cx="17.5" cy="18" r="1.6"/></svg>
+    </div>
+
+  <h1>Create an account</h1>
+  <p class="subtitle">Manage your travel and tour operations</p>
+
+  <div class="toggle" id="accountToggle">
+    <button type="button" class="active" data-type="company">Company</button>
+    <button type="button" data-type="tourist">Tourist</button>
+  </div>
+
+  <!-- ================= COMPANY FORM ================= -->
+  <form id="companyForm" class="account-form" novalidate>
+
+    <div class="field">
+      <label for="companyName">Company Name <span class="req">*</span></label>
+      <input type="text" id="companyName" name="companyName" placeholder="e.g. AdventureCam Tours Ltd" required>
+      <div class="error-msg" data-error-for="companyName"></div>
+    </div>
+
+    <div class="field">
+      <label for="regNumber">Business Registration Number <span class="req">*</span></label>
+      <input type="text" id="regNumber" name="regNumber" placeholder="e.g. RC/DLA/2024/B/1234" required>
+      <div class="error-msg" data-error-for="regNumber"></div>
+    </div>
+
+    <div class="field">
+      <label for="contactName">Contact Person Full Name <span class="req">*</span></label>
+      <input type="text" id="contactName" name="contactName" placeholder="enter the company Manager" required>
+      <div class="error-msg" data-error-for="contactName"></div>
+    </div>
+
+    <div class="field">
+      <label for="companyEmail">Business Email Address <span class="req">*</span></label>
+      <input type="email" id="companyEmail" name="email" placeholder="you@company.com" required>
+      <div class="error-msg" data-error-for="email"></div>
+    </div>
+
+    <div class="field">
+      <label for="companyPhone">Phone Number <span class="req">*</span></label>
+      <input type="tel" id="companyPhone" name="phone" placeholder="xXX XXX XXX" required>
+      <div class="error-msg" data-error-for="phone"></div>
+    </div>
+
+    <div class="row-2">
+      <div class="field">
+        <label for="companyCountry">Country of Registration <span class="req">*</span></label>
+        <select id="companyCountry" name="country" required>
+          <option value="" disabled selected>Select country</option>
+          <option>Cameroon</option>
+          <option>Nigeria</option>
+          <option>Chad</option>
+          <option>Gabon</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>France</option>
+          <option>Other</option>
+        </select>
+        <div class="error-msg" data-error-for="country"></div>
+      </div>
+
+      <div class="field">
+        <label for="businessType">Business Type <span class="req">*</span></label>
+        <select id="businessType" name="businessType" required>
+          <option value="" disabled selected>Select type</option>
+          <option>Tour Operator</option>
+          <option>Travel Agency</option>
+          <option>Hotel / Accommodation</option>
+          <option>Transport Service</option>
+          <option>Other</option>
+        </select>
+        <div class="error-msg" data-error-for="businessType"></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="address">Business Address <span class="req">*</span></label>
+      <input type="text" id="address" name="address" placeholder="Street, City, Region" required>
+      <div class="error-msg" data-error-for="address"></div>
+    </div>
+
+    <div class="field">
+      <label for="website">Website (optional)</label>
+      <input type="url" id="website" name="website" placeholder="https://www.yourcompany.com">
+      <div class="error-msg" data-error-for="website"></div>
+    </div>
+
+    <div class="field">
+      <label for="companyPassword">Password <span class="req">*</span></label>
+      <div class="password-wrap">
+        <input type="password" id="companyPassword" name="password" placeholder="At least 8 characters" required minlength="8">
+        <button type="button" class="toggle-eye" data-target="companyPassword" aria-label="Show password">👁</button>
+      </div>
+      <div class="error-msg" data-error-for="password"></div>
+    </div>
+
+    <label class="terms">
+      <input type="checkbox" id="companyAgree" name="agree" required>
+      <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+    </label>
+
+    <button type="submit" class="submit-btn">Create Company Account</button>
+  </form>
+
+  <!-- ================= TOURIST FORM ================= -->
+  <form id="touristForm" class="account-form" novalidate style="display:none;">
+
+    <div class="field">
+      <label for="fullName">Full Name <span class="req">*</span></label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter full Name" required>
+      <div class="error-msg" data-error-for="fullName"></div>
+    </div>
+
+    <div class="field">
+      <label for="touristEmail">Email Address <span class="req">*</span></label>
+      <input type="email" id="touristEmail" name="email" placeholder="you@example.com" required>
+      <div class="error-msg" data-error-for="email"></div>
+    </div>
+
+    <div class="field">
+      <label for="touristPhone">Phone Number <span class="req">*</span></label>
+      <input type="tel" id="touristPhone" name="phone" placeholder="XXX XXX XXX" required>
+      <div class="error-msg" data-error-for="phone"></div>
+    </div>
+
+    <div class="row-2">
+      <div class="field">
+        <label for="touristCountry">Country of Residence <span class="req">*</span></label>
+        <select id="touristCountry" name="country" required>
+          <option value="" disabled selected>Select country</option>
+          <option>Cameroon</option>
+          <option>Nigeria</option>
+          <option>Chad</option>
+          <option>Gabon</option>
+          <option>United States</option>
+          <option>United Kingdom</option>
+          <option>France</option>
+          <option>Other</option>
+        </select>
+        <div class="error-msg" data-error-for="country"></div>
+      </div>
+
+      <div class="field">
+        <label for="nationality">Nationality <span class="req">*</span></label>
+        <input type="text" id="nationality" name="nationality" placeholder="e.g. Cameroonian" required>
+        <div class="error-msg" data-error-for="nationality"></div>
+      </div>
+    </div>
+
+    <div class="row-2">
+      <div class="field">
+        <label for="gender">Gender <span class="req">*</span></label>
+        <select id="gender" name="gender" required>
+          <option value="" disabled selected>Select gender</option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Non-binary</option>
+          <option>Prefer not to say</option>
+        </select>
+        <div class="error-msg" data-error-for="gender"></div>
+      </div>
+
+      <div class="field">
+        <label for="dob">Date of Birth <span class="req">*</span></label>
+        <input type="date" id="dob" name="dob" required>
+        <div class="error-msg" data-error-for="dob"></div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="touristPassword">Password <span class="req">*</span></label>
+      <div class="password-wrap">
+        <input type="password" id="touristPassword" name="password" placeholder="At least 8 characters" required minlength="8">
+        <button type="button" class="toggle-eye" data-target="touristPassword" aria-label="Show password">👁</button>
+      </div>
+      <div class="error-msg" data-error-for="password"></div>
+    </div>
+
+    <label class="terms">
+      <input type="checkbox" id="touristAgree" name="agree" required>
+      <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+    </label>
+
+    <button type="submit" class="submit-btn">Create Tourist Account</button>
+  </form>
+
+  <p class="signin">Already have an account? <a href="login.html">Sign in</a></p>
+  </div>
+</div>
+
+<script src="ACCOUNT.JS"></script>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-logo">
+
+      <a href="MAPS.HTML">
+
+        <img src="img/DVDU4213[1].PNG"
+           alt="AdventureCam Logo">
+
+      </a>
+
+      <p>
+        Explore • Experience • Enjoy
+      </p>
+
+    </div>
+
+    <div class="footer-contact">
+
+      <h2>CONTACT US</h2>
+
+      <p>
+        <i class="fa-solid fa-phone"></i>
+        +237 679 893 672
+      </p>
+
+      <p>
+        <i class="fa-solid fa-phone"></i>
+        +237 677 912 844
+      </p>
+
+      <p>
+        <i class="fa-solid fa-envelope"></i>
+        afuhekiequeeneth@gmail.com
+      </p>
+
+      <p>
+        <i class="fa-solid fa-location-dot"></i>
+        Buea, South West Region, Cameroon
+      </p>
+
+    </div>
+
+
+    <div class="footer-social">
+
+      <h2>FOLLOW US</h2>
+
+      <div class="social-icons">
+
+        <a href="https://facebook.com"
+           target="_blank">
+
+          <i class="fab fa-facebook-f"></i>
+
+        </a>
+
+        <a href="https://instagram.com"
+           target="_blank">
+
+          <i class="fab fa-instagram"></i>
+
+        </a>
+
+        <a href="https://x.com"
+           target="_blank">
+
+          <i class="fab fa-x-twitter"></i>
+
+        </a>
+
+        <a href="https://youtube.com"
+           target="_blank">
+
+          <i class="fab fa-youtube"></i>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+
+    <hr>
+
+    <p>
+
+      &copy; <span id="year"></span>
+      AdventureCam. All Rights Reserved.
+
+    </p>
+
+    <p>
+
+      Designed by AdventureCam Team
+
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+  var y = document.getElementById('year');
+  if(y) y.textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

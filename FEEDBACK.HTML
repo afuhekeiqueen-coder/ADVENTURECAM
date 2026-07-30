@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdventureCam - Share Your Feedback</title>
+<link rel="stylesheet" href="FEEDBACK.CSS">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="footer.css">
+
+</head>
+<body>
+
+  <div class="page">
+
+  
+    <header class="navbar">
+      <div class="logo">
+        <img src="img/DVDU4213[1].PNG" alt="AdventureCam logo" class="logo-icon">
+        <span class="logo-text">ADVENTURE<span class="logo-text-accent">CAM</span></span>
+      </div>
+      <nav class="nav-links">
+        <a href="HOME.HTML">HOME</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="ABOUT.HTML">ABOUT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="EXPLORE.HTML">EXPOLRE CAMEROON</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="MAPS.HTML">MAPS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="ACCOUNT.HTML">ACCOUNT</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="BOOKING.HTML">BOOKING</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="FEEDBACK.HTML" class="active">FEEDBACK</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </nav>
+    </header>
+
+    <main class="content">
+
+      <div class="hero-image">
+        <img src="img/IFYR7108.JPG" alt="Travellers in front of a statue in Cameroon">
+      </div>
+
+       <section class="feedback-panel">
+        <h1>SHARE YOUR FEEDBACK</h1>
+        <p class="subtitle">Tell us about your trip expperience</p>
+
+        <form class="feedback-form">
+
+          <label for="tour">Which tour did you take?</label>
+          <select id="tour" name="tour">
+            <option value="" selected disabled>select tour</option>
+            <option value="tour1">Mount Cameroon Trek</option>
+            <option value="tour2">Limbe Wildlife Tour</option>
+            <option value="tour3">Douala City Tour</option>
+          </select>
+
+          <label class="rating-label">Overall Rating</label>
+          <div class="stars" role="radiogroup" aria-label="Overall rating">
+            <span class="star" data-value="1">★</span>
+            <span class="star" data-value="2">★</span>
+            <span class="star" data-value="3">★</span>
+            <span class="star" data-value="4">★</span>
+            <span class="star" data-value="5">★</span>
+          </div>
+
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="Enter full name">
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+
+          <label for="feedback">Your feedback</label>
+          <input type="text" id="feedback" name="feedback" placeholder="Tell us what you like or how we can improve">
+
+          <button type="submit" class="submit-btn">SUBMIT</button>
+
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-logo">
+
+        <a href="MAPS.HTML">
+
+          <img src="img/DVDU4213[1].PNG"
+             alt="AdventureCam Logo">
+
+        </a>
+
+        <p>
+          Explore • Experience • Enjoy
+        </p>
+
+      </div>
+
+      <div class="footer-contact">
+
+        <h2>CONTACT US</h2>
+
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          +237 679 893 672
+        </p>
+
+        <p>
+          <i class="fa-solid fa-phone"></i>
+          +237 677 912 844
+        </p>
+
+        <p>
+          <i class="fa-solid fa-envelope"></i>
+          afuhekiequeeneth@gmail.com
+        </p>
+
+        <p>
+          <i class="fa-solid fa-location-dot"></i>
+          Buea, South West Region, Cameroon
+        </p>
+
+      </div>
+
+
+      <div class="footer-social">
+
+        <h2>FOLLOW US</h2>
+
+        <div class="social-icons">
+
+          <a href="https://facebook.com"
+             target="_blank">
+
+            <i class="fab fa-facebook-f"></i>
+
+          </a>
+
+          <a href="https://instagram.com"
+             target="_blank">
+
+            <i class="fab fa-instagram"></i>
+
+          </a>
+
+          <a href="https://x.com"
+             target="_blank">
+
+            <i class="fab fa-x-twitter"></i>
+
+          </a>
+
+          <a href="https://youtube.com"
+             target="_blank">
+
+            <i class="fab fa-youtube"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <hr>
+
+      <p>
+
+        &copy; <span id="year"></span>
+        AdventureCam. All Rights Reserved.
+
+      </p>
+
+      <p>
+
+        Designed by AdventureCam Team
+
+      </p>
+
+    </div>
+
+  </footer>
+
+  </div>
+
+<script src=FEEDBACK.JS></script>
+
+</body>
+</html>

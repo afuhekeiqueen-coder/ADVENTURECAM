@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdventureCam | Login</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+
+<div class="login-container">
+
+    <h1>WELCOME BACK!</h1>
+    <p>Sign in to continue</p>
+
+    <form id="loginForm">
+
+        <label>Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+
+        <label>Password</label>
+
+        <div class="password-box">
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <span id="togglePassword">&#128065;</span>
+        </div>
+
+        <div class="options">
+
+            <label class="remember">
+                <input type="checkbox">
+                Remember Me
+            </label>
+
+            <a href="#">Forgot Password?</a>
+
+        </div>
+
+        <button type="submit">Sign In</button>
+
+        <p class="register-link">
+            Don't have an account?
+            <a href="ACCOUNT.HTML">Register</a>
+        </p>
+
+    </form>
+
+</div>
+
+<script src="login.js"></script>
+
+<script>
+    var y = document.getElementById('year');
+    if(y) y.textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
