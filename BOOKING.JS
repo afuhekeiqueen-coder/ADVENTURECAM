@@ -1,13 +1,7 @@
-/*====================================================
-    ADVENTURECAM
-    booking.js
-=====================================================*/
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /*=========================================
-        FOOTER YEAR
-    =========================================*/
 
     const year = document.getElementById("year");
 
@@ -15,9 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
         year.textContent = new Date().getFullYear();
     }
 
-    /*=========================================
-        MINIMUM DATE = TODAY
-    =========================================*/
 
     const travelDate = document.getElementById("travelDate");
 
@@ -28,10 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         travelDate.setAttribute("min", today);
 
     }
-
-    /*=========================================
-        CHARACTER COUNTER
-    =========================================*/
 
     const textarea = document.getElementById("request");
 
@@ -47,9 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /*=========================================
-        BOOKING FORM
-    =========================================*/
 
     const form = document.getElementById("bookingForm");
 
@@ -61,9 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let valid = true;
 
-        /*===========================
-            FULL NAME
-        ===========================*/
 
         const fullName = document.getElementById("fullName");
 
@@ -81,9 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        /*===========================
-            EMAIL
-        ===========================*/
 
         const email = document.getElementById("email");
 
@@ -104,9 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        /*===========================
-            PHONE
-        ===========================*/
+    
 
         const phone = document.getElementById("phone");
 
@@ -126,9 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        /*===========================
-            DESTINATION
-        ===========================*/
 
         const destination =
             document.getElementById("destination");
@@ -147,10 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        /*===========================
-            PERSONS
-        ===========================*/
-
         const persons =
             document.getElementById("persons");
 
@@ -168,9 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        /*===========================
-            DATE
-        ===========================*/
 
         if (travelDate.value === "") {
 
@@ -186,9 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        /*===========================
-            SUCCESS
-        ===========================*/
 
         if (valid) {
 
@@ -212,9 +175,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    /*=========================================
-        RESET BUTTON
-    =========================================*/
 
     form.addEventListener("reset", function () {
 
@@ -236,9 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    /*=========================================
-        RIPPLE EFFECT
-    =========================================*/
 
     const buttons = document.querySelectorAll(
 
@@ -293,9 +250,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    /*=========================================
-        BACK TO TOP BUTTON
-    =========================================*/
 
     const backToTop =
         document.getElementById("backToTop");
@@ -334,9 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-    /*=========================================
-        LOADING EFFECT
-    =========================================*/
 
     document.body.style.opacity = "0";
 
@@ -347,11 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         document.body.style.opacity = "1";
 
-    });
-
-    /*=========================================
-        SMOOTH SCROLL
-    =========================================*/
+    })
 
     document.querySelectorAll('a[href^="#"]')
 
@@ -381,11 +328,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
-    /*=========================================
-        KEYBOARD SHORTCUT
-
-        Press B to focus booking form
-    =========================================*/
 
     document.addEventListener("keydown", function (e) {
 
