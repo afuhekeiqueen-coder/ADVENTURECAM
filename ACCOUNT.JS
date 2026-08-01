@@ -1,14 +1,17 @@
-// ===========================================
-// AdventureCam Account Page
-// account.js
-// ===========================================
+// ============================================================
+// AdventureCam — Account Page JS
+// Handles Company / Tourist toggle and form submission
+// ============================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
+    // ── Company / Tourist toggle ─────────────────────────────
     const accountToggle = document.getElementById("accountToggle");
-    const companyForm = document.getElementById("companyForm");
-    const touristForm = document.getElementById("touristForm");
-    const toggleButtons = accountToggle ? accountToggle.querySelectorAll("button[data-type]") : [];
+    const companyForm   = document.getElementById("companyForm");
+    const touristForm   = document.getElementById("touristForm");
+    const toggleButtons = accountToggle
+        ? accountToggle.querySelectorAll("button[data-type]")
+        : [];
 
     function showForm(type) {
         if (!companyForm || !touristForm) return;
@@ -21,162 +24,121 @@ document.addEventListener("DOMContentLoaded", function () {
             companyForm.style.display = "block";
         }
 
-        toggleButtons.forEach((button) => {
-            button.classList.toggle("active", button.dataset.type === type);
+        toggleButtons.forEach(function (btn) {
+            btn.classList.toggle("active", btn.dataset.type === type);
         });
     }
 
     if (accountToggle && toggleButtons.length) {
-        toggleButtons.forEach((button) => {
-            button.addEventListener("click", function () {
+        toggleButtons.forEach(function (btn) {
+            btn.addEventListener("click", function () {
                 showForm(this.dataset.type);
             });
         });
-
         showForm("company");
     }
 
-    const registerTab = document.getElementById("registerTab");
-    const loginTab = document.getElementById("loginTab");
+    // ── Password show/hide ───────────────────────────────────
+    document.querySelectorAll(".toggle-eye").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const targetId = this.dataset.target;
+            const input    = document.getElementById(targetId);
+            if (!input) return;
 
-    const showLogin = document.getElementById("showLogin");
-    const showRegister = document.getElementById("showRegister");
+            if (input.type === "password") {
+                input.type    = "text";
+                this.textContent = "🙈";
+            } else {
+                input.type    = "password";
+                this.textContent = "👁";
+            }
+        });
+    });
 
-    // Hide login form when page loads
-    loginSection.style.display = "none";
+    // ── Generic form submit handler ──────────────────────────
+    function wireForm(form, endpoint) {
+        if (!form) return;
 
-    // ===============================
-    // SHOW LOGIN FORM
-    // ===============================
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-    function openLogin() {
+            // Check terms checkbox
+            const agree = form.querySelector('input[name="agree"]');
+            if (agree && !agree.checked) {
+                showMessage(form, "You must agree to the Terms of Service before continuing.", "error");
+                return;
+            }
 
-        registerSection.style.display = "none";
-        loginSection.style.display = "block";
+            const submitBtn = form.querySelector(".submit-btn");
+            if (submitBtn) {
+                submitBtn.disabled    = true;
+                submitBtn.textContent = "Creating account…";
+            }
 
-        registerTab.classList.remove("active");
-        loginTab.classList.add("active");
+            const formData = new FormData(form);
 
+            fetch(endpoint, { method: "POST", body: formData })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    if (data.success) {
+                        showMessage(form, data.message, "success");
+                        form.reset();
+                        if (submitBtn) {
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = endpoint.includes("company")
+                                ? "Create Company Account"
+                                : "Create Tourist Account";
+                        }
+                        // Redirect to login after short delay
+                        setTimeout(function () {
+                            window.location.href = "login.html";
+                        }, 2000);
+                    } else {
+                        showMessage(form, data.message || "Registration failed. Please try again.", "error");
+                        if (submitBtn) {
+                            submitBtn.disabled    = false;
+                            submitBtn.textContent = endpoint.includes("company")
+                                ? "Create Company Account"
+                                : "Create Tourist Account";
+                        }
+                    }
+                })
+                .catch(function () {
+                    showMessage(form, "Network error. Please check your connection.", "error");
+                    if (submitBtn) {
+                        submitBtn.disabled    = false;
+                        submitBtn.textContent = endpoint.includes("company")
+                            ? "Create Company Account"
+                            : "Create Tourist Account";
+                    }
+                });
+        });
     }
 
-    // ===============================
-    // SHOW REGISTER FORM
-    // ===============================
+    wireForm(companyForm, "company_register.php");
+    wireForm(touristForm, "account.php");
 
-    function openRegister() {
+    // ── Helper: show inline message below the form ───────────
+    function showMessage(form, msg, type) {
+        let msgEl = form.querySelector(".form-message");
 
-        registerSection.style.display = "block";
-        loginSection.style.display = "none";
+        if (!msgEl) {
+            msgEl           = document.createElement("p");
+            msgEl.className = "form-message";
+            msgEl.style.cssText =
+                "margin-top:14px; padding:10px 16px; border-radius:8px; " +
+                "font-size:0.9rem; text-align:center;";
+            form.appendChild(msgEl);
+        }
 
-        loginTab.classList.remove("active");
-        registerTab.classList.add("active");
-
+        msgEl.textContent      = msg;
+        msgEl.style.background = type === "success" ? "#d4edda" : "#f8d7da";
+        msgEl.style.color      = type === "success" ? "#155724" : "#721c24";
+        msgEl.style.display    = "block";
     }
 
-    registerTab.addEventListener("click", openRegister);
-    loginTab.addEventListener("click", openLogin);
-
-    showLogin.addEventListener("click", function(e){
-
-        e.preventDefault();
-        openLogin();
-
-    });
-
-    showRegister.addEventListener("click", function(e){
-
-        e.preventDefault();
-        openRegister();
-
-    });
-
-    // ===============================
-    // REGISTER USER
-    // ===============================
-
-    registerForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        const inputs = registerForm.querySelectorAll("input, select");
-
-        const user = {
-
-            fullname: inputs[0].value,
-            email: inputs[1].value,
-            phone: inputs[2].value,
-            nationality: inputs[3].value,
-            residence: inputs[4].value,
-            gender: inputs[5].value,
-            dob: inputs[6].value,
-            password: inputs[7].value
-
-        };
-
-        localStorage.setItem("AdventureCamUser", JSON.stringify(user));
-
-        alert("Registration Successful!\nPlease Login.");
-
-        registerForm.reset();
-
-        openLogin();
-
-    });
-
-    // ===============================
-    // LOGIN USER
-    // ===============================
-
-    loginForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        const email =
-        loginForm.querySelector('input[type="email"]').value;
-
-        const password =
-        loginForm.querySelector('input[type="password"]').value;
-
-        const savedUser =
-        JSON.parse(localStorage.getItem("AdventureCamUser"));
-
-        if(savedUser == null){
-
-            alert("No account found.\nPlease Register First.");
-
-            openRegister();
-
-            return;
-
-        }
-
-        if(email === savedUser.email &&
-           password === savedUser.password){
-
-            alert("Login Successful!\nWelcome " + savedUser.fullname);
-
-            localStorage.setItem("loggedIn","true");
-
-            window.location.href = "index.html";
-
-        }
-
-        else{
-
-            alert("Incorrect Email or Password.");
-
-        }
-
-    });
-
-    // ===============================
-    // REMEMBER USER
-    // ===============================
-
-    if(localStorage.getItem("loggedIn") === "true"){
-
-        console.log("User already logged in.");
-
-    }
+    // ── Footer year ──────────────────────────────────────────
+    const year = document.getElementById("year");
+    if (year) year.textContent = new Date().getFullYear();
 
 });

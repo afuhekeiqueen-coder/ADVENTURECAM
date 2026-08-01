@@ -66,9 +66,59 @@ stars.forEach((star) => {
 
 if (feedbackForm) {
   feedbackForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+
     if (!selectedRating) {
-      event.preventDefault();
-      alert('Please select a rating before submitting.');
+      showFeedbackMessage('Please select a star rating before submitting.', 'error');
+      return;
     }
+
+    const submitBtn = feedbackForm.querySelector('.submit-btn');
+    if (submitBtn) {
+      submitBtn.disabled   = true;
+      submitBtn.textContent = 'Submitting…';
+    }
+
+    const formData = new FormData(feedbackForm);
+
+    fetch('feedback.php', { method: 'POST', body: formData })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (data.success) {
+          showFeedbackMessage(data.message, 'success');
+          feedbackForm.reset();
+          selectedRating = 0;
+          updateStars(0);
+        } else {
+          showFeedbackMessage(data.message || 'Submission failed. Please try again.', 'error');
+          if (submitBtn) {
+            submitBtn.disabled    = false;
+            submitBtn.textContent = 'SUBMIT';
+          }
+        }
+      })
+      .catch(function () {
+        showFeedbackMessage('Network error. Please check your connection.', 'error');
+        if (submitBtn) {
+          submitBtn.disabled    = false;
+          submitBtn.textContent = 'SUBMIT';
+        }
+      });
   });
+}
+
+function showFeedbackMessage(msg, type) {
+  let msgEl = document.getElementById('feedbackMessage');
+  if (!msgEl) {
+    msgEl          = document.createElement('p');
+    msgEl.id       = 'feedbackMessage';
+    msgEl.style.cssText =
+      'margin-top:14px; padding:10px 16px; border-radius:8px; ' +
+      'font-size:0.9rem; text-align:center;';
+    feedbackForm.appendChild(msgEl);
+  }
+  msgEl.textContent       = msg;
+  msgEl.style.background  = type === 'success' ? '#d4edda' : '#f8d7da';
+  msgEl.style.color       = type === 'success' ? '#155724' : '#721c24';
+  msgEl.style.display     = 'block';
 }

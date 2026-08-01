@@ -155,21 +155,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (valid) {
 
-            success.style.display = "block";
+            const formData = new FormData(form);
 
-            success.scrollIntoView({
-
-                behavior: "smooth"
-
-            });
-
-            setTimeout(() => {
-
-                form.reset();
-
-                counter.textContent = "0";
-
-            }, 2000);
+            fetch("booking.php", { method: "POST", body: formData })
+                .then(function (res) { return res.json(); })
+                .then(function (data) {
+                    if (data.success) {
+                        success.style.display = "block";
+                        success.scrollIntoView({ behavior: "smooth" });
+                        setTimeout(() => { form.reset(); }, 2000);
+                    } else {
+                        alert(data.message || "Booking failed. Please try again.");
+                    }
+                })
+                .catch(function () {
+                    alert("Network error. Please check your connection.");
+                });
 
         }
 
@@ -189,8 +190,6 @@ document.addEventListener("DOMContentLoaded", function () {
             event.preventDefault();
 
         }
-
-        counter.textContent = "0";
 
         success.style.display = "none";
 
@@ -333,7 +332,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (e.key === "b" || e.key === "B") {
 
-            fullName.focus();
+            const fullName = document.getElementById("fullName");
+            if (fullName) fullName.focus();
 
         }
 
