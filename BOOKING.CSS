@@ -148,26 +148,24 @@ nav ul li a.active::after{
     align-items:center;
 
     padding:60px 20px;
-
+padding-left: 300px;
 }
 
 
 .booking-container{
 
     width:80%;
-
     max-width:700px;
-
     background:#ffffff;
-
     padding:45px;
-
     border-radius:12px;
-
+    margin:60px auto;
     box-shadow:0 12px 30px rgba(0,0,0,.12);
-
     border:2px solid #dddddd;
-
+    justify-content:center;
+    align-items:center;
+    padding-bottom:80px;
+padding-left: 100px;
 }
 
 
@@ -190,6 +188,8 @@ nav ul li a.active::after{
 form{
 
     width:100%;
+    justify-content :center;
+    align-items:center;
 
 }
 

@@ -158,9 +158,6 @@ nav ul li a.active::after{
 
     overflow:hidden;
 
-    border-right:1px solid #dcdcdc;
-
-    background:#ececec;
 
 }
 

@@ -28,6 +28,16 @@ body{
 
 }
 
+.container{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    padding-bottom: 80px;
+    max-width: 1000px;
+    margin: 60px  auto ;
+
+}
+
 
 
 

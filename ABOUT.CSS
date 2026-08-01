@@ -87,6 +87,8 @@ background-position:center;
 
 position:relative;
 
+min-height: 80vh;
+
 }
 
 .overlay{
@@ -107,17 +109,12 @@ color:white;
 
 .overlay h1{
 
-font-size:55px;
+font-size:75px;
 
-font-weight:300;
+font-weight:500px;
+padding-top: 200px;
+font-family: 'Times New Roman', Times, serif;
 
-}
-
-.overlay h2{
-
-font-size:40px;
-text-align: center;
-font-weight:200;
 }
 
 .who{
