@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const textarea = document.getElementById("request");
 
-    const counter = document.getElementById("charCount");
+    
 
     if (textarea && counter) {
 
